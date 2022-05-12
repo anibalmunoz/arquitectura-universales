@@ -36,69 +36,69 @@ void main() {
     expect(FormularioLogin.asignarDesdeSharedPreferences(), isNotNull);
   });
 
-  group("API LOGIN", () {
-    var baseURL = "192.168.0.32:9595";
-    var pathURL = "/cliente/login";
-    test("Post Login", () async {
-      Map<String, dynamic> bodyMap;
-      bodyMap = {"correo": "prueba", "contrasena": "prueba"};
-      var jsonMap = json.encode(bodyMap);
-      var response;
-      try {
-        response = await ApiManagerClienteLogin.shared.request(
-            baseUrl: baseURL,
-            pathUrl: pathURL,
-            jsonParam: jsonMap,
-            type: HttpType.POST);
-      } on SocketException catch (e) {
-        print(e.message);
-      }
+  // group("API LOGIN", () {
+  //   var baseURL = "192.168.0.32:9595";
+  //   var pathURL = "/cliente/login";
+  //   test("Post Login", () async {
+  //     Map<String, dynamic> bodyMap;
+  //     bodyMap = {"correo": "prueba", "contrasena": "prueba"};
+  //     var jsonMap = json.encode(bodyMap);
+  //     var response;
+  //     try {
+  //       response = await ApiManagerClienteLogin.shared.request(
+  //           baseUrl: baseURL,
+  //           pathUrl: pathURL,
+  //           jsonParam: jsonMap,
+  //           type: HttpType.POST);
+  //     } on SocketException catch (e) {
+  //       print(e.message);
+  //     }
 
-      expect(response, isNotNull);
-    });
+  //     expect(response, isNotNull);
+  //   });
 
-    test("Error, codigo 403", () async {
-      Map<String, dynamic> bodyMap;
-      bodyMap = {
-        "correo": "asdf",
-        "contrasena": "asfd",
-      };
-      var jsonMap = json.encode(bodyMap);
-      Response? response;
-      try {
-        response = await ApiManagerClienteLogin.shared.request(
-            baseUrl: baseURL,
-            pathUrl: pathURL,
-            jsonParam: jsonMap,
-            type: HttpType.POST);
-      } on SocketException catch (e) {
-        print(e.message);
-      }
+  //   test("Error, codigo 403", () async {
+  //     Map<String, dynamic> bodyMap;
+  //     bodyMap = {
+  //       "correo": "asdf",
+  //       "contrasena": "asfd",
+  //     };
+  //     var jsonMap = json.encode(bodyMap);
+  //     Response? response;
+  //     try {
+  //       response = await ApiManagerClienteLogin.shared.request(
+  //           baseUrl: baseURL,
+  //           pathUrl: pathURL,
+  //           jsonParam: jsonMap,
+  //           type: HttpType.POST);
+  //     } on SocketException catch (e) {
+  //       print(e.message);
+  //     }
 
-      expect(response!.statusCode == 403, true);
-    });
+  //     expect(response!.statusCode == 403, true);
+  //   });
 
-    test("Login correcto, codigo 200", () async {
-      Map<String, dynamic> bodyMap;
-      bodyMap = {
-        "correo": "munozhernandez@gmail.com",
-        "contrasena": "@Anibal12345",
-      };
-      var jsonMap = json.encode(bodyMap);
-      Response? response;
-      try {
-        response = await ApiManagerClienteLogin.shared.request(
-            baseUrl: baseURL,
-            pathUrl: pathURL,
-            jsonParam: jsonMap,
-            type: HttpType.POST);
-      } on SocketException catch (e) {
-        print(e.message);
-      }
+  //   test("Login correcto, codigo 200", () async {
+  //     Map<String, dynamic> bodyMap;
+  //     bodyMap = {
+  //       "correo": "munozhernandez@gmail.com",
+  //       "contrasena": "@Anibal12345",
+  //     };
+  //     var jsonMap = json.encode(bodyMap);
+  //     Response? response;
+  //     try {
+  //       response = await ApiManagerClienteLogin.shared.request(
+  //           baseUrl: baseURL,
+  //           pathUrl: pathURL,
+  //           jsonParam: jsonMap,
+  //           type: HttpType.POST);
+  //     } on SocketException catch (e) {
+  //       print(e.message);
+  //     }
 
-      expect(response!.statusCode == 200, true);
-    });
-  });
+  //     expect(response!.statusCode == 200, true);
+  //   });
+  // });
 
   group("Basic Bloc", () {
     BasicBloc bloc = BasicBloc();
@@ -122,49 +122,49 @@ void main() {
     });
   });
 
-  group("API GET", () {
-    var baseUrl = "192.168.0.32:9595";
+  // group("API GET", () {
+  //   var baseUrl = "192.168.0.32:9595";
 
-    test("Buscar clientes", () async {
-      var pathUrl = "/cliente/buscar";
-      final uri = Uri.http(baseUrl, pathUrl);
-      late http.Response response;
-      try {
-        response = await http.get(uri);
-      } on SocketException catch (e) {
-        print(e.message);
-      }
+  //   test("Buscar clientes", () async {
+  //     var pathUrl = "/cliente/buscar";
+  //     final uri = Uri.http(baseUrl, pathUrl);
+  //     late http.Response response;
+  //     try {
+  //       response = await http.get(uri);
+  //     } on SocketException catch (e) {
+  //       print(e.message);
+  //     }
 
-      expect(response.statusCode == 200, true);
-    });
+  //     expect(response.statusCode == 200, true);
+  //   });
 
-    test("Buscar seguros", () async {
-      var pathUrl = "/seguro/buscar";
-      final uri = Uri.http(baseUrl, pathUrl);
-      late http.Response response;
-      try {
-        response = await http.get(uri);
-      } on SocketException catch (e) {
-        print(e.message);
-      }
+  //   test("Buscar seguros", () async {
+  //     var pathUrl = "/seguro/buscar";
+  //     final uri = Uri.http(baseUrl, pathUrl);
+  //     late http.Response response;
+  //     try {
+  //       response = await http.get(uri);
+  //     } on SocketException catch (e) {
+  //       print(e.message);
+  //     }
 
-      expect(response.statusCode == 200, true);
-    });
+  //     expect(response.statusCode == 200, true);
+  //   });
 
-    test("Buscar siniestros", () async {
-      var pathUrl = "/siniestro/buscar";
-      final uri = Uri.http(baseUrl, pathUrl);
-      late http.Response response;
+  //   test("Buscar siniestros", () async {
+  //     var pathUrl = "/siniestro/buscar";
+  //     final uri = Uri.http(baseUrl, pathUrl);
+  //     late http.Response response;
 
-      try {
-        response = await http.get(uri);
-      } on SocketException catch (e) {
-        print(e.message);
-      }
+  //     try {
+  //       response = await http.get(uri);
+  //     } on SocketException catch (e) {
+  //       print(e.message);
+  //     }
 
-      expect(response.statusCode == 200, true);
-    });
-  });
+  //     expect(response.statusCode == 200, true);
+  //   });
+  // });
 
   group("Estado inicial en LOGIN: ", () {
     test("Estado inicial de conexión de red", () {
