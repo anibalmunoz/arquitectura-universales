@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TextBox extends StatelessWidget {
-  final TextEditingController _textEditingController;
-  final String label;
-
-  TextBox(this._textEditingController, this.label);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +9,7 @@ class TextBox extends StatelessWidget {
         //controller: _textEditingController,
         decoration: InputDecoration(
             filled: true,
-            labelText: label,
+            labelText: "",
             suffix: GestureDetector(
               child: Icon(Icons.close),
               // onTap: () {
