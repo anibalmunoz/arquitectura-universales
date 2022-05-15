@@ -1,4 +1,3 @@
-import 'package:arquitectura_universales/localizations/localization.dart';
 import 'package:arquitectura_universales/main.dart';
 import 'package:arquitectura_universales/pages/paginas_datos/clientes/clientes_page.dart';
 import 'package:arquitectura_universales/pages/paginas_datos/seguros/seguros_page.dart';
