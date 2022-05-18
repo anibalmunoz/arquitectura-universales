@@ -155,7 +155,7 @@ void main() {
   });
 
   testWidgets('Test backPage', (tester) async {
-    var widget = BackPage(
+    var widgets = BackPage(
         hintText: 'Test',
         iconData: Icons.textsms_sharp,
         buttonText: 'Test',
@@ -166,7 +166,7 @@ void main() {
 
     tester.pumpWidget(MaterialApp(
       home: Scaffold(
-        body: widget,
+        body: widgets,
       ),
     ));
   });
